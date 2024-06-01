@@ -6,7 +6,7 @@ import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn";
 import ImageModal from "../ImageModal/ImageModal";
 import Loader from "../Loader/Loader";
-import "./App.css";
+import "./App.module.css";
 import toast from "react-hot-toast";
 
 function App() {
