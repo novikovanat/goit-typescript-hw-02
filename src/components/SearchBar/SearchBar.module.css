@@ -1,0 +1,29 @@
+.header {
+ 
+  position: fixed;
+  margin: 40px 0;
+  top: 0;
+  z-index: 2;
+  background-color: transparent;
+}
+
+.search {
+  padding: 10px;
+  font-size: inherit;
+  border-radius: 8px;
+  width: 800px;
+  margin-right: 60px;
+}
+
+.search:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+  outline: 1px solid #646cffaa;
+}
+.search:focus {
+  outline: 1px solid #646cffaa;
+}
+
+.form {
+  margin: auto;
+  width: 1440px;
+}

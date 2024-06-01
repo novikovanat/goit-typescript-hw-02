@@ -1,0 +1,15 @@
+.largeImage {
+  height: 80vh;
+}
+
+.smallImage {
+  object-fit: cover;
+  aspect-ratio: 1;
+  border-radius: 10px;
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  transition: clip-path 1000ms
+}
+
+.smallImage:hover {
+  clip-path: xywh(0 5px 100% 100% round 10px);
+}

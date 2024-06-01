@@ -1,0 +1,64 @@
+.largeImage {
+  max-height: 70vh;
+  margin: auto;
+}
+
+.photoOpen {
+  background-color: var(--background-color);
+  max-width: 1280px;
+  max-height: 95vh;
+  margin: 12px auto 12px auto;
+  border-radius: 3px;
+  filter: drop-shadow(0 0 2em #646cffaa);
+  border: none;
+  text-align: left;
+  padding: 15px 0;
+  outline: 1px solid #646cffaa;
+}
+
+.author {
+  font-weight: 600;
+  padding-left: 10px;
+}
+.author::first-letter {
+  text-decoration: capitalize;
+}
+
+.textDiv {
+  max-width: 1000px;
+  font-size: 22px;
+  line-height: 2;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+.description {
+  text-align: left;
+  line-height: 1;
+}
+
+.description::first-letter {
+  text-transform: capitalize;
+}
+.flex {
+  display: flex;
+}
+.social {
+  margin-right: 12px;
+  width: 30px;
+}
+.social:hover {
+  filter: drop-shadow(6px 6px 13px #646cffaa);
+}
+.closeButton {
+  display: block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  padding: 20px;
+  margin: 0 30px 10px auto;
+}
+
+.closeButton:hover {
+  color: #646cffaa;
+}
