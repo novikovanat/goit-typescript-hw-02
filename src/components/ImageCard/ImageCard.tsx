@@ -1,6 +1,6 @@
 import React from "react";
 import css from "./ImageCard.module.css";
-import { imageCardProps } from "./ImageCard.js";
+import { imageCardProps } from "./ImageCardType.js";
 export default function ImageCard({
   small,
   alt,

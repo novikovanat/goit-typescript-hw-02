@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import fetchPhotos from "../JS/fetchPhotos";
 import SearchBar from "../SearchBar/SearchBar";
-import ImageGallery from "../ImageGallery/ImageGallery.jsx";
-import ErrorMessage from "../ErrorMessage/ErrorMessage.jsx";
+import ImageGallery from "../ImageGallery/ImageGallery";
+import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn";
-import ImageModal from "../ImageModal/ImageModal.jsx";
+import ImageModal from "../ImageModal/ImageModal";
 import Loader from "../Loader/Loader";
 import "./App.module.css";
 import toast from "react-hot-toast";
@@ -30,11 +30,14 @@ function App() {
     search(searchTerm, page);
   }, [searchTerm, page]);
 
-  const search:searchFunc = async (searchTerm, page) => {
+  const search: searchFunc = async (searchTerm, page) => {
     try {
       setLoading(true);
       setError("");
-      const photosArray:ImageObjResponseType= await fetchPhotos(searchTerm, page);
+      const photosArray: ImageObjResponseType = await fetchPhotos(
+        searchTerm,
+        page
+      );
       const { results } = photosArray;
       if (results.length == 0) {
         toast(`We couldn't find anything like ${searchTerm}`);
@@ -80,7 +83,7 @@ function App() {
           )}
         </>
       )}
-      {loading === true && <Loader/>}
+      {loading === true && <Loader />}
       {page < response.total_pages && (
         <LoadMoreBtn handleLoad={setPage} page={page} />
       )}
