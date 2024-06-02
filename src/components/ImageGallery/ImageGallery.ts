@@ -5,7 +5,9 @@ type ImageGallaryProps = {
 };
 
 type Result = {
-  urls: { small: string };
+  description: string;
+  urls: { small: string; regular: string };
   alt_description: string;
   id: number;
+  user: { first_name: string; last_name: string; instagram_username: string };
 };

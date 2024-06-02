@@ -3,7 +3,11 @@ import { SiInstagram } from "react-icons/si";
 import { RiCloseLargeLine } from "react-icons/ri";
 import css from "./ImageModal.module.css";
 
-export default function ImageModal({ onClose, modalState, image }) {
+export default function ImageModal({
+  onClose,
+  modalState,
+  image,
+}: ImageModalProps) {
   const {
     description,
     alt_description,
@@ -13,9 +17,9 @@ export default function ImageModal({ onClose, modalState, image }) {
 
   Modal.setAppElement("#root");
 
-  const styles = {
-    base: "fade",
-  };
+  // const styles = {
+  //   base: "fade",
+  // };
 
   function closeModal() {
     onClose(false);
@@ -27,7 +31,7 @@ export default function ImageModal({ onClose, modalState, image }) {
         className={css.photoOpen}
         isOpen={modalState}
         onRequestClose={closeModal}
-        style={styles}
+        // style={styles}
         contentLabel="Image Modal"
       >
         <div className={css.div}>
