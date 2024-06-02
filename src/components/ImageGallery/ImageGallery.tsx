@@ -1,11 +1,12 @@
-import ImageCard from "../ImageCard/ImageCard.tsx";
+import ImageCard from "../ImageCard/ImageCard.jsx";
 import css from "./ImageGallery.module.css";
+// import {imageGallaryProps} from "./ImageGallery.ts"
 
 export default function ImageGallery({
   photosArray: { results },
   onOpen,
   onItem,
-}) {
+}: ImageGallaryProps) {
   const imageList = results.map(
     ({ urls: { small }, alt_description, id }, index) => (
       <li className={css.imageItem} key={id}>

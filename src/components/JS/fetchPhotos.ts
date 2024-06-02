@@ -4,7 +4,12 @@ const MY_ACCESS_KEY = "BUqEmomTG7T1vLBnVUi4F4sAZAHb-r9RCsxNJ7SWWvI";
 axios.defaults.baseURL = "https://api.unsplash.com";
 axios.defaults.headers.common["Authorization"] = `Client-ID ${MY_ACCESS_KEY}`;
 axios.defaults.headers.common["Accept-Version"] = "v1";
-export default async function fetchPhotos(searchTerm, page) {
+
+
+async function fetchPhotos(
+  searchTerm: SearchTerm,
+  page: Page
+):Promise<ImageObjResponseType> {
   const result = await axios.get("/search/photos", {
     params: {
       auto: "format",
@@ -15,3 +20,5 @@ export default async function fetchPhotos(searchTerm, page) {
   });
   return result.data;
 }
+
+export default fetchPhotos;

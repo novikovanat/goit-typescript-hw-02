@@ -1,11 +1,13 @@
-type indexImage = null | number;
-type loading = boolean;
-type errorText = string;
-type page = number;
-type searchTerm = string;
-type modalStatus = boolean;
-type result = Array<Object>;
-type responseType = { total: number; total_pages: number; results:Array<Object>};
-
-type searchFunc = (searchTerm: searchTerm, page: page) => void;
-
+type IndexImage = null | number;
+type Loading = boolean;
+type ErrorText = string;
+type Page = number;
+type SearchTerm = string;
+type ModalStatus = boolean;
+type ImageObjResponseType = {
+  total: number;
+  total_pages: number;
+  results: Array<Result>;
+};
+type catchType = (error: object) => void;
+type searchFunc = (searchTerm: SearchTerm, page: Page) => void;
