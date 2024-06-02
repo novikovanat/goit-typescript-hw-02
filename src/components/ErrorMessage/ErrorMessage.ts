@@ -1,0 +1,1 @@
+type errorMessage = { errorText: string };

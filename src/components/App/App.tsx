@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import fetchPhotos from "../JS/fetchPhotos";
 import SearchBar from "../SearchBar/SearchBar";
 import ImageGallery from "../ImageGallery/ImageGallery";
-import ErrorMessage from "../ErrorMessage/ErrorMessage";
+import ErrorMessage from "../ErrorMessage/ErrorMessage.jsx";
 import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn";
 import ImageModal from "../ImageModal/ImageModal";
 import Loader from "../Loader/Loader";
@@ -10,17 +10,18 @@ import "./App.module.css";
 import toast from "react-hot-toast";
 
 function App() {
-  const [response, setResponse] = useState({
+  const [response, setResponse] = useState<responseType>({
     total: 0,
     total_pages: 0,
     results: [],
   });
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-  const [page, setPage] = useState(1);
-  const [searchTerm, setSearchTerm] = useState("");
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [currentImage, setCurrentImage] = useState(null);
+
+  const [loading, setLoading] = useState<loading>(false);
+  const [error, setError] = useState<errorText>("");
+  const [page, setPage] = useState<page>(1);
+  const [searchTerm, setSearchTerm] = useState<searchTerm>("");
+  const [modalIsOpen, setModalIsOpen] = useState<modalStatus>(false);
+  const [currentImage, setCurrentImage] = useState<indexImage>(null);
 
   useEffect(() => {
     if (searchTerm === "") {
@@ -29,11 +30,11 @@ function App() {
     search(searchTerm, page);
   }, [searchTerm, page]);
 
-  const search = async (searchTerm, page) => {
+  const search:searchFunc = async (searchTerm, page) => {
     try {
       setLoading(true);
       setError("");
-      const photosArray = await fetchPhotos(searchTerm, page);
+      const photosArray:responseType= await fetchPhotos(searchTerm, page);
       const { results } = photosArray;
       if (results.length == 0) {
         toast(`We couldn't find anything like ${searchTerm}`);
