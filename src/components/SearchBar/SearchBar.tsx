@@ -1,7 +1,7 @@
 import toast, { Toaster } from "react-hot-toast";
 import css from "./SearchBar.module.css";
 
-export default function SearchBar({ onTerm, onReset }) {
+export default function SearchBar({ onTerm, onReset }:SearchBarPropsType) {
   function submitHandler(event) {
     event.preventDefault();
 
