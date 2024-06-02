@@ -1,7 +1,7 @@
 import { Hearts } from "react-loader-spinner";
 import css from './Loader.module.css'
 
-export default function Loader({isLoading}) {
+export default function Loader() {
   return (
     <div className={css.flexWrap}>
         <Hearts
@@ -11,7 +11,7 @@ export default function Loader({isLoading}) {
           ariaLabel="hearts-loading"
           wrapperStyle={{}}
           wrapperClass=""
-          visible={isLoading}
+          visible={true}
         />
         <Hearts
           height="120"
@@ -20,7 +20,7 @@ export default function Loader({isLoading}) {
           ariaLabel="hearts-loading"
           wrapperStyle={{}}
           wrapperClass=""
-          visible={isLoading}
+          visible={true}
         />
     </div>
   );

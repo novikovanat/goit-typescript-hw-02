@@ -4,7 +4,7 @@ import SearchBar from "../SearchBar/SearchBar";
 import ImageGallery from "../ImageGallery/ImageGallery.jsx";
 import ErrorMessage from "../ErrorMessage/ErrorMessage.jsx";
 import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn";
-import ImageModal from "../ImageModal/ImageModal";
+import ImageModal from "../ImageModal/ImageModal.jsx";
 import Loader from "../Loader/Loader";
 import "./App.module.css";
 import toast from "react-hot-toast";
@@ -80,7 +80,7 @@ function App() {
           )}
         </>
       )}
-      {loading === true && <Loader isLoading={loading} />}
+      {loading === true && <Loader/>}
       {page < response.total_pages && (
         <LoadMoreBtn handleLoad={setPage} page={page} />
       )}
