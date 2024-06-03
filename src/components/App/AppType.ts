@@ -9,5 +9,4 @@ type ImageObjResponseType = {
   total_pages: number;
   results: Array<Result>;
 };
-type catchType = (error: object) => void;
-type searchFunc = (searchTerm: SearchTerm, page: Page) => void;
+type SearchFunc = (searchTerm: SearchTerm, page: Page) => Promise<void>;

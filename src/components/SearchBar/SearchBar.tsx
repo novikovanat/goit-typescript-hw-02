@@ -1,6 +1,5 @@
 import toast, { Toaster } from "react-hot-toast";
 import css from "./SearchBar.module.css";
-import { FormEvent } from "react";
 
 export default function SearchBar({ onTerm, onReset }: SearchBarPropsType) {
   function submitHandler(event: React.FormEvent<HTMLFormElement>) {

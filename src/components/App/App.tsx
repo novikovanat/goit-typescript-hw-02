@@ -30,7 +30,7 @@ function App() {
     search(searchTerm, page);
   }, [searchTerm, page]);
 
-  const search: searchFunc = async (searchTerm, page) => {
+  const search: SearchFunc = async (searchTerm, page) => {
     try {
       setLoading(true);
       setError("");
