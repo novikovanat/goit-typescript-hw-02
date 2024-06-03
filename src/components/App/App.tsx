@@ -51,7 +51,7 @@ function App() {
       } else {
         setResponse(photosArray);
       }
-    } catch (error) {
+    } catch (error: any) {
       setError(error.message);
     } finally {
       setLoading(false);
