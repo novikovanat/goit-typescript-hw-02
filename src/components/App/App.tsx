@@ -6,7 +6,7 @@ import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn";
 import ImageModal from "../ImageModal/ImageModal";
 import Loader from "../Loader/Loader";
-import "./App.module.css";
+import css from "./App.module.css";
 import toast from "react-hot-toast";
 
 function App() {
@@ -59,7 +59,7 @@ function App() {
   };
 
   return (
-    <>
+    <div className={css.div}>
       {modalIsOpen === false && (
         <SearchBar onTerm={setSearchTerm} onReset={setPage} />
       )}
@@ -87,7 +87,7 @@ function App() {
       {page < response.total_pages && (
         <LoadMoreBtn handleLoad={setPage} page={page} />
       )}
-    </>
+    </div>
   );
 }
 
