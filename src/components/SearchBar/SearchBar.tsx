@@ -3,11 +3,13 @@ import css from "./SearchBar.module.css";
 import { FormEvent } from "react";
 
 export default function SearchBar({ onTerm, onReset }: SearchBarPropsType) {
-  function submitHandler(event: any) {  // React.FormEvent<HTMLFormElement>
+  function submitHandler(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    let input = event.currentTarget.elements.search.value.trim();
-   
+    let input = (
+      event.currentTarget.elements[0] as HTMLInputElement
+    ).value.trim();
+
     if (input == "") {
       toast("Please enter search term!");
       return;
